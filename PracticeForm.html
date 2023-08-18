@@ -1,0 +1,128 @@
+<!doctype>
+<html>
+	<head>
+		<title>Practice Forms</title>
+	</head>
+	<body>
+		<form>
+		<table>
+			<label><h2>Amazon Job Application</h2></label>
+			<tr>
+				<td>
+					<label>FirstName</label>
+				</td>
+				<td>
+					<label>:</label>
+				</td>
+				<td>
+					<input type="text">
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<label>LastName</label>
+				</td>
+				<td>
+					<label>:</label>
+				</td>
+				<td>
+					<input type="text">
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<label>Enter mail</label>
+				</td>
+				<td>
+					<label>:</label>
+				</td>
+				<td>
+					<input type="email">
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<label>Enter password</label>
+				</td>
+				<td>
+					<label>:</label>
+				</td>
+				<td>
+					<input type="password">
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<label>Upload Ur Resume</label>
+				</td>
+				<td>
+					<label>:</label>
+				</td>
+				<td>
+					<input type="file">
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<label>Enter mobile no</label>
+				</td>
+				<td>
+					<label>:</label>
+				</td>
+				<td>
+					<input type="tel">
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<label>Enter DOB</label>
+				</td>
+				<td>
+					<label>:</label>
+				</td>
+				<td>
+					<input type="date">
+				</td>
+			</tr>
+		</table>
+			<label><b>Interested Roles :</b><label>
+			<select>
+					<option >Developer</option>
+					<option  selected>Testing</option>
+					<option >Voice process</option>								<option >Data entry</option>
+			</select><br>
+		<fieldset>
+			<legend> <b>Personal Information </b></legend>
+				<label>Recommended Job location :</label><br>
+				<input type="checkbox" name="loaction">
+				<label>Hyderabad</label><br>
+				<input type="checkbox" name="loaction">
+				<label>Bengaluru</label><br>
+				<input type="checkbox" name="loaction">
+				<label>Chennai</label><br>
+			<label>Choose Ur gender :</label><br>
+			<input type="radio" name="gen">
+			<label>Male</label><br>
+			<input type="radio" name="gen">
+			<label>FeMale</label><br>
+		</fieldset>
+				<label>Select Ur State :</label><br>
+				<input list="state">
+				<datalist id="state">
+					<option value="andhra">
+					<option value ="bengaluru">
+					<option value="hyderabad">
+					<option value="bihar">
+					<option value="chennai">
+				</datalist><br>
+			<label for="prog">Uploading Resume</label>
+			<progress id="prog" value="70" max="100"></progress><br>
+		<label><b>Any comments :</b></label><br>
+		<textarea></textarea><br><br>
+		<input type="button" value="click" onclick="alert('leave site')">
+		<button><a href="https://www.youtube.com/">Terms nd condtions</a></button><br>
+		<input type="submit">
+		<input type="reset">
+		</form>
+	</body>
+</html>

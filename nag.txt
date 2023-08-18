@@ -1,0 +1,114 @@
+package Factory;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+public class ConnectionFactory
+{
+	public static Connection getConnectionFactory() throws ClassNotFoundException, SQLException
+	{
+		String url="jdbc:mysql://localhost:3306/miniproject";
+		String u="root";
+		String p="root";
+		Class.forName("com.mysql.cj.jdbc.Driver");
+		return DriverManager.getConnection(url,u,p);
+		
+		
+	}
+}
+
+
+package Factory;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+public class DaoUserLogin 
+{
+	public static ResultSet getUserLogin(String username,String password) throws ClassNotFoundException, SQLException
+	{
+		String Query="SELECT * FROM DEMOPROJECT WHERE USERNAME=? AND PASSWORD=?";
+		Connection con=ConnectionFactory.getConnectionFactory();
+		PreparedStatement pst=con.prepareStatement(Query);
+		pst.setString(1, username);
+		pst.setString(2, password);
+		return pst.executeQuery();
+	}
+}
+
+
+package Factory;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+public class DaoUserRegister 
+{
+	public static int getUserRegister(String fullname,String email,String username,String password,String mobile) throws ClassNotFoundException, SQLException
+	{
+		String Query="INSERT INTO DEMOPROJECT VALUES(?,?,?,?,?)";
+		Connection con=ConnectionFactory.getConnectionFactory();
+		PreparedStatement pst=con.prepareStatement(Query);
+		pst.setString(1, fullname);
+		pst.setString(2, email);
+		pst.setString(3, username);
+		pst.setString(4, password);
+		pst.setString(5, mobile);
+		return pst.executeUpdate();
+	}
+}
+
+
+<html>
+<body>
+<form action="Register" method="post">
+<center>
+	FULLNAME
+	<input type="text" name="fullname"><br>
+	EMAIL
+	<input type="text" name="email"><br>
+	USERNAME
+	<input type="text" name="username"><br>
+	PASSWORD
+	<input type="text" name="password"><br>
+	MOBIILE
+	<input type="text" name="mobile"><br>
+	
+	<input type="submit" value="Register">
+	
+	<input type="reset" value="reset">
+	
+	<a href="Login.jsp"><input type="button" value="Login"></a>
+</center>
+</form>
+</body>
+</html>
+
+
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<form action="Login" method="post">
+<center>
+	USERNAME
+	<input type="text" name="username"><br>
+	PASSWORD
+	<input type="text" name="password"><br>
+	<input type="submit" value="Login">
+	
+	<input type="reset" value="cancel"><br>
+</center>
+</form>
+</body>
+</html>

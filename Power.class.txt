@@ -1,0 +1,11 @@
+class Power
+{
+		public static void main (String args[])
+		{
+		double a=25;
+		double x=Math.sqrt(25);
+		double y=Math.pow(25,5);
+		double z=Math PI*Math.pow(25,5)
+		System.out.println(x,y,z);
+		}
+}
